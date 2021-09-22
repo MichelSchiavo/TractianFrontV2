@@ -9,24 +9,28 @@ export function HeaderButton() {
     <>
       {menuOpen ?
       <Box
-        width="100%"
         mx='auto'
         textAlign='center'
         cursor='pointer'
         fontSize='1.3rem'
+        fontWeight='700'
         mb='22px'
         onClick={handleCloseMenu}
       >
-        Header
+        Menu
       </Box>
         : 
       <ListIcon
         as={CgMenuGridR}
         cursor='pointer'
-        fontSize='1.5rem'
-        minWidth='50px'
-        mb='25px'
+        fontSize='2rem'
+        pr={1}
+        width='100%'
+        mb='20px'
         mx='auto'
+        _hover={{
+          color: 'black'
+        }}
         onClick={handleOpenMenu}
       /> }
     </>    

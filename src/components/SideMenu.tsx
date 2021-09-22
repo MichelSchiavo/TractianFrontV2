@@ -20,9 +20,9 @@ export function SideMenu() {
       width={menuOpen ? '300px' : '70px'}
       borderRadius='10px'
       boxSizing='initial'
-      borderLeft='5px solid #4d5bf9'
-      background='#4d5bf9'
-      transition='width 0.5s'
+      borderLeft='4px solid white'
+      background='blue.650'
+      transition='width 0.3s'
       overflowX='hidden'
     >
       <List
@@ -30,7 +30,7 @@ export function SideMenu() {
         top='0'
         left='0'
         width='100%'
-        paddingLeft='5px'
+        paddingLeft='4px'
         paddingTop='40px'
       >
         <HeaderButton />

@@ -13,11 +13,14 @@ export const theme = extendTheme({
             "200": "#B3B5C6",
             "100": "#D1D2DC",
             "50": "#EEEEF2"
+        },
+        blue: {
+            "650": '#4d5bf9'
         }
     },
     fonts: {
-        heading: 'Roboto',
-        body: 'Roboto',
+        heading: 'Poppins',
+        body: 'Poppins',
     },
     styles: {
         global: {

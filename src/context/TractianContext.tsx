@@ -8,14 +8,14 @@ interface TractianContextData {
   handleCloseMenu: () => void;
 }
 
-interface TractianContextProvider {
+interface TractianContextProviderProps {
   children: ReactNode;
 }
 
 export const TractianContext = createContext({} as TractianContextData);
 
-export function TractianContextProvider({ children }: TractianContextProvider) {
-  const [page, setPage] = useState('');
+export function TractianContextProvider({ children }: TractianContextProviderProps) {
+  const [page, setPage] = useState('Home');
   const [menuOpen, setPenuOpen] = useState(false);
 
   function handleChangePage(value: string) {

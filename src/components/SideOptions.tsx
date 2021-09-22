@@ -1,4 +1,4 @@
-import { Box, ListItem, ListIcon, Link } from "@chakra-ui/react";
+import { Box, Flex, ListItem, ListIcon, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import { useTractianContext } from "../context/TractianContext";
@@ -17,50 +17,50 @@ export function SideOptions({options}:SideOptionsProps ) {
 
   useEffect(() => {
     page === options.name ? setColorScheme({bg: '#fff', color: 'black'}) : setColorScheme({bg: 'transparent', color: '#fff'})
-  }, [page])
+  }, [page]);
 
   return (
     <ListItem
-      backgroundColor={colorScheme.bg}
-      position='relative'
       width='100%'
-      borderTopLeftRadius='20px'
-      borderBottomLeftRadius='20px'
+      mb={1}
+      cursor='pointer'
       onClick={() => handleChangePage(options.name)}
     >
-      <Link
-        href='#'
+      <Flex
         position='relative'
         width='100%'
         display='flex'
-        textDecoration='none'
+        borderRadius='20px 0 0 20px'
+        backgroundColor={colorScheme.bg}
         color={colorScheme.color}
+        _hover={{
+          bg: 'white',
+          color: 'blue.650'
+        }}
       >
-        <Box
+        <Text
           as='span'
-          display='block'
           minWidth='60px'
           h='60px'
-          lineHeight='70px'
+          lineHeight='60px'
           textAlign='center'
         >
           <ListIcon
             as={options.src}
             fontSize='1.5rem'
           />
-        </Box>
-        <Box
+        </Text>
+        <Text
           as='span'
           position='relative'
-          display='block'
           paddingLeft='10px'
           h='60px'
           lineHeight='60px'
           whiteSpace='normal'
         >
           {options.name}
-        </Box>
-      </Link>
+        </Text>
+      </Flex>
     </ListItem>
   )
 }
