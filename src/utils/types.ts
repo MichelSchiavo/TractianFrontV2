@@ -1,4 +1,4 @@
-export type AssetsProps = {
+export interface AssetsProps {
   id: number;
   sensors: [
     string
@@ -22,18 +22,18 @@ export type AssetsProps = {
   companyId: number;
 }
 
-export type CompanyProps = {
+export interface CompanyProps {
   id: number;
   name: string;
 }
 
-export type UnitProps = {
+export interface UnitProps {
   id: number;
   name: string;
   companyId: number;
 }
 
-export type userProps = {
+export interface userProps {
   id: number;
   email: string;
   name: string;

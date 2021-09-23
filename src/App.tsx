@@ -1,9 +1,13 @@
 import { Grid } from "@chakra-ui/react";
-import { Home } from './components/Home';
 import { SideMenu } from './components/SideMenu';
 import { useTractianContext } from "./context/TractianContext";
 
+import { Home } from './components/Home';
+import { Companies } from "./components/Companies";
+
 import { useMediaQuery } from "@chakra-ui/react"
+import { Units } from "./components/Units";
+import { Users } from "./components/Users";
 
 function App() {
   const { page } = useTractianContext();
@@ -11,6 +15,9 @@ function App() {
 
   const pages: {[index: string]: any} = {
     'Home': {src: <Home /> },
+    'Companies': {src: <Companies /> },
+    'Units': {src: <Units /> },
+    'Users': {src: <Users /> },
   };
 
   return (

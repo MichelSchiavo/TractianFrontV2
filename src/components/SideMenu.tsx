@@ -21,7 +21,7 @@ export function SideMenu() {
       borderRadius='10px'
       boxSizing='initial'
       borderLeft='4px solid white'
-      background='blue.650'
+      background='blue.900'
       transition='width 0.3s'
       overflowX='hidden'
     >
@@ -35,9 +35,9 @@ export function SideMenu() {
       >
         <HeaderButton />
         <SideOptions options={{name: 'Home', src: FaHome}} />
-        <SideOptions options={{name: 'Empresas', src: GiFactory}} />
-        <SideOptions options={{name: 'Unidades', src: BiUnite}} />
-        <SideOptions options={{name: 'Usuários', src: FiUsers}} />
+        <SideOptions options={{name: 'Companies', src: GiFactory}} />
+        <SideOptions options={{name: 'Units', src: BiUnite}} />
+        <SideOptions options={{name: 'Users', src: FiUsers}} />
       </List>
     </Box>
   )

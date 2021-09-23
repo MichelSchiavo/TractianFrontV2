@@ -1,8 +1,7 @@
-import { Box, Flex, ListItem, ListIcon, Text } from "@chakra-ui/react";
+import { Flex, ListItem, ListIcon, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { IconType } from "react-icons";
 import { useTractianContext } from "../context/TractianContext";
-
 
 interface SideOptionsProps {
   options: {
@@ -35,7 +34,7 @@ export function SideOptions({options}:SideOptionsProps ) {
         color={colorScheme.color}
         _hover={{
           bg: 'white',
-          color: 'blue.650'
+          color: 'blue.900'
         }}
       >
         <Text
@@ -47,6 +46,7 @@ export function SideOptions({options}:SideOptionsProps ) {
         >
           <ListIcon
             as={options.src}
+            ml='6px'
             fontSize='1.5rem'
           />
         </Text>
