@@ -24,6 +24,13 @@ export const theme = extendTheme({
     },
     styles: {
         global: {
+            "*": {
+                margin: 0,
+                padding: 0,
+                boxSizing: 'border-box',
+                userSelect: 'none',
+                'WebkitUserDrag': 'none'
+            },
             body: {
                 bg: 'gray.900',
                 color: 'gray.50'

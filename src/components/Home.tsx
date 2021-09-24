@@ -1,13 +1,17 @@
-import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { Box, Flex, Img, Text, Modal, useDisclosure } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import { FaCircle } from 'react-icons/fa';
+import { useTractianContext } from "../context/TractianContext";
 
 import { api } from '../services/api'
 import { AssetsProps } from "../utils/types";
+import { PrincipalModal } from "./PrincipalModal";
 
 export function Home() {
+  const { handleSetModalAsset } = useTractianContext();
   const [assets, setAssets] = useState<AssetsProps[]>([]);
+  const { isOpen, onOpen, onClose } = useDisclosure({});
 
   const circleColor: {[index: string]: any} = {
     'inAlert': {color: 'red' },
@@ -21,8 +25,16 @@ export function Home() {
     });
   }, []);
 
+  function handleModalOpen(asset: AssetsProps) {
+    handleSetModalAsset(asset);
+    onOpen();
+  }
+
   return (
     <>
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <PrincipalModal />
+    </Modal>
       {assets.map((asset) => (
         <Flex
           key={asset.id}
@@ -35,6 +47,7 @@ export function Home() {
           borderRadius={4}
           boxShadow='0 0 1px white'
           cursor='pointer'
+          onClick={() => handleModalOpen(asset)}
         >
           <Img h={120} w={140} borderRadius={4} src={asset.image} alt={asset.name+' image'} />
           <Box>

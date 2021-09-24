@@ -1,4 +1,5 @@
 import { createContext, useState, ReactNode, useContext } from "react";
+import { AssetsProps } from "../utils/types";
 
 interface TractianContextData {
   page: string;
@@ -6,6 +7,8 @@ interface TractianContextData {
   menuOpen: boolean;
   handleOpenMenu: () => void;
   handleCloseMenu: () => void;
+  modalAsset: AssetsProps | undefined;
+  handleSetModalAsset: (data: AssetsProps) => void;
 }
 
 interface TractianContextProviderProps {
@@ -16,6 +19,7 @@ export const TractianContext = createContext({} as TractianContextData);
 
 export function TractianContextProvider({ children }: TractianContextProviderProps) {
   const [page, setPage] = useState('Home');
+  const [modalAsset, setModalAsset] = useState<AssetsProps>();
   const [menuOpen, setPenuOpen] = useState(false);
 
   function handleChangePage(value: string) {
@@ -30,6 +34,10 @@ export function TractianContextProvider({ children }: TractianContextProviderPro
     setPenuOpen(false)
   }
 
+  function handleSetModalAsset(data: AssetsProps) {
+    setModalAsset(data)
+  }
+
   return (
     <TractianContext.Provider
       value={{
@@ -37,7 +45,9 @@ export function TractianContextProvider({ children }: TractianContextProviderPro
         handleChangePage,
         menuOpen,
         handleOpenMenu,
-        handleCloseMenu
+        handleCloseMenu,
+        modalAsset,
+        handleSetModalAsset
       }}
     >
       {children}
