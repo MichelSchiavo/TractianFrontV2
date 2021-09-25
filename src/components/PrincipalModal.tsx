@@ -8,8 +8,6 @@ import { api } from "../services/api";
 import { chartOptions } from "../utils/chartOptions";
 import { CompanyProps, UnitProps, userProps } from "../utils/types";
 
-
-
 export function PrincipalModal() {
   const { modalAsset } = useTractianContext();
   const [ companies, setCompanies ] = useState<CompanyProps[]>([]);
